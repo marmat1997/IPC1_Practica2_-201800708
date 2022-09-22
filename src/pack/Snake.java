@@ -73,48 +73,61 @@ public void Avanzar () {
           //pintor.fillRect(snake.get(i)[0]*tam, snake.get(i)[1]*tam, tam-1,tam-1);
         } }
     if(aux){
-        JOptionPane.showMessageDialog(this, "has perdido");
+        JOptionPane.showMessageDialog(this, "has perdido, con "+score+" puntos");
         //break;
     }
     else{
 
       if(nuevo[0]==comida[0]&&nuevo[1]==comida[1]){
-          if(Panel.score==-1){
-           Panel.score=1;
-              System.out.println(score);
-              Panel.punto(score);
-          }
-          else if(Panel.score==1){
-            Panel.score=2;
-              System.out.println(score);
-              Panel.punto(score);
-          }
-           else if(Panel.score==2){
-            Panel.score=3;
-              System.out.println(score);
-              Panel.punto(score);
-          }
-            else if(Panel.score==3){
-            Panel.score=4;
-            Panel.punto(score);
-              System.out.println(score);
-          }
-                     else if(Panel.score==4){
-            Panel.score=5;
-              System.out.println(score);
-          }
-                     else if(Panel.score==5){
-            Panel.score=6;
-              System.out.println(score);
-          }
-                     else if(Panel.score==6){
-            Panel.score=7;
-              System.out.println(score);
-          }
-                     else if(Panel.score==7){
-            Panel.score=8;
-              System.out.println(score);
-          }
+//          if(Panel.score==-1){
+//              System.out.println("en comida");
+//           Panel.score=1;
+//              System.out.println(score);
+//              puntos(score);
+//              //Panel.punto(score);
+//          }
+//          else if(Panel.score==1){
+//              
+//            Panel.score=2;
+//            System.out.println("en comida");
+//              System.out.println(score);
+//              puntos(score);
+//              //Panel.punto(score);
+//          }
+//           else if(Panel.score==2){
+//            Panel.score=3;
+//              System.out.println(score);
+//              //Panel.punto(score);
+//          }
+//            else if(Panel.score==3){
+//            Panel.score=4;
+//            //Panel.punto(score);
+//              System.out.println(score);
+//          }
+//                     else if(Panel.score==4){
+//            Panel.score=5;
+//              System.out.println(score);
+//          }
+//                     else if(Panel.score==5){
+//            Panel.score=6;
+//              System.out.println(score);
+//          }
+//                     else if(Panel.score==6){
+//            Panel.score=7;
+//              System.out.println(score);
+//          }
+//                     else if(Panel.score==7){
+//            Panel.score=8;
+//              System.out.println(score);
+//          }
+//          else if(Panel.score==8){
+//            Panel.score=9;
+//              System.out.println(score);
+//          }
+//                    else if(Panel.score==9){
+//            Panel.score=10;
+//              System.out.println(score);
+//          }
 //          switch (Panel.score) {
 //              case -1:
 //                  Panel.score++;
@@ -142,14 +155,13 @@ public void Avanzar () {
 //          }
         //System.out.println(score);
           snake.add(nuevo);
-                           // Panel.score++;
-           //Panel.punto(score);
-            
          generarcomida();
 
-//                   Panel.score++;
-//           Panel.punto(score);
-         
+                  Panel.score++;
+                  Panel.punto(score);
+                if(score==10){
+                    JOptionPane.showMessageDialog(this, "has ganado, con "+score+" puntos");
+                }
       }
       else{
               snake.add(nuevo);
@@ -231,6 +243,9 @@ public void cambiardireccion(String dir){
 }
 public void igualar(){
     this.direccion=this.direccionproxima;
+}
+public void puntos(int put){
+Panel.punto(put);
 }
 //public void punto(int score){
 //    

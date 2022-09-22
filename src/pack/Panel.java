@@ -15,8 +15,7 @@ import javax.swing.JLabel;
  */
 public class Panel extends javax.swing.JFrame{
  Snake Panel;
- public static int score = -1;
- 
+ public static int score = 0;
     /**
      * Creates new form Panel
      */
@@ -33,17 +32,20 @@ public class Panel extends javax.swing.JFrame{
         this.requestFocus(true);
        // public static int score;
        //this.jLabel1.setText(String.valueOf(score));
+        //punto(score);
        this.jLabel1.setText(String.valueOf(score));
     }
 public static void punto(int score){
     String puntuacion = String.valueOf(score);
     System.out.println("punto en jframe");
     System.out.println(score);
+    //Panel pam = new Panel().jLabel1.setText(puntuacion);
+    //new pack.Panel().jLabel1.setText(puntuacion);
+    return;
     //puntoMostrar(puntuacion);
-    new Panel().puntoMostrar(puntuacion);
     //this.jLabel1.setText(score);
 }
-public  void puntoMostrar(String put){
+private void puntoMostrar(String put){
     System.out.println("punto mostrar"+put);
     this.jLabel1.setText(put);
     //this.jLabel1.setText(score);
