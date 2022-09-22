@@ -4,6 +4,7 @@
  */
 package pack;
 
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JLabel;
@@ -12,7 +13,7 @@ import javax.swing.JLabel;
  *
  * @author marma
  */
-public class Panel extends javax.swing.JFrame {
+public class Panel extends javax.swing.JFrame{
  Snake Panel;
  public static int score = -1;
  
@@ -36,12 +37,15 @@ public class Panel extends javax.swing.JFrame {
     }
 public static void punto(int score){
     String puntuacion = String.valueOf(score);
+    System.out.println("punto en jframe");
+    System.out.println(score);
     //puntoMostrar(puntuacion);
     new Panel().puntoMostrar(puntuacion);
     //this.jLabel1.setText(score);
 }
-public  void puntoMostrar(String score){
-this.jLabel1.setText(score);
+public  void puntoMostrar(String put){
+    System.out.println("punto mostrar"+put);
+    this.jLabel1.setText(put);
     //this.jLabel1.setText(score);
 }
     /**
@@ -137,71 +141,25 @@ this.jLabel1.setText(score);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-//    private class TAdapter extends KeyAdapter {
-//
-//        @Override
-//        public void keyPressed(KeyEvent e) {
-//
-//            int key = e.getKeyCode();
-//
-//            if ((key == KeyEvent.VK_LEFT)) {
-//             Panel.cambiardireccion("iz");
-//             System.out.println("iz");
-//            }
-//
-//            if ((key == KeyEvent.VK_RIGHT)) {
-//             System.out.println("de");
-//             Panel.cambiardireccion("de");
-//            }
-//
-//            if ((key == KeyEvent.VK_UP)) {
-//             Panel.cambiardireccion("ar");
-//             System.out.println("ar");
-//            }
-//
-//            if ((key == KeyEvent.VK_DOWN)) {
-//             Panel.cambiardireccion("ab");
-//             System.out.println("ab");
-//            }
-//        }
-//    }
-//    class MyKeyAdapter extends KeyAdapter{
-//        public void keyPressed(KeyEvent k){
-//                switch(k.getKeyCode()){
-//                case (KeyEvent.VK_S):
-//                    Panel.cambiardireccion("ab");
-//                    System.out.println("ab");
-//                    
-//                    break;
-//                case (KeyEvent.VK_UP):
-//                    if(direction != 'D' && !keyInput){
-//                        direction = 'U';
-//                        keyInput = true;
-//                    }
-//                    break;
-//                case (KeyEvent.VK_LEFT):
-//                    if(direction != 'R' && keyInput == false){
-//                        direction = 'L';
-//                        keyInput = true;
-//                    }
-//                    break;
-//                case (KeyEvent.VK_RIGHT):
-//                    if(direction != 'L' && keyInput == false){
-//                        direction = 'R';
-//                        keyInput = true;
-//                    }
-//                    break;
-//                case (KeyEvent.VK_F2):
-//                    if(!timer.isRunning()){
-//                        startGame();
-//                    }
-//                    break;
-//                case KeyEvent.VK_ESCAPE:
-//					parentFrame.switchToLobbyPanel();
-//					break;
-//            }   
-//        }
-//        }
+public class MyKeyAdapter extends KeyAdapter{
+@Override
+public void keyPressed(KeyEvent e) {
+switch(e.getKeyCode()) {
+case KeyEvent.VK_LEFT:
+    Panel.cambiardireccion("iz");
+break;
+case KeyEvent.VK_RIGHT:
+    Panel.cambiardireccion("de");
+break;
+case KeyEvent.VK_UP:
+Panel.cambiardireccion("ar");
+break;
+case KeyEvent.VK_DOWN:
+Panel.cambiardireccion("ab");
+break;
+}
+}
+}
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
 //     if(evt.getKeyCode()==KeyEvent.VK_D){
 //         System.out.println("de");
@@ -227,22 +185,6 @@ this.jLabel1.setText(score);
          default:
              break;
      }
-//          switch (evt.getKeyCode()) {
-//         case KeyEvent.VK_LEFT:
-//             Panel.cambiardireccion("de");
-//             break;
-//         case KeyEvent.VK_UP:
-//             Panel.cambiardireccion("ar");
-//             break;
-//         case KeyEvent.VK_S:
-//             Panel.cambiardireccion("ab");
-//             break;
-//         case KeyEvent.VK_A:
-//             Panel.cambiardireccion("iz");
-//             break;
-//         default:
-//             break;
-//     }
     }//GEN-LAST:event_formKeyPressed
 
     private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped

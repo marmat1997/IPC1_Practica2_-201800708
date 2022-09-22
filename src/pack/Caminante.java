@@ -16,7 +16,7 @@ public Caminante(Snake panel){
 //        panel.repaint();
         while(estado){
                     panel.Avanzar();
-        panel.repaint();
+                    panel.repaint();
       try {
           Thread.sleep(150);
           //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

@@ -77,11 +77,74 @@ public void Avanzar () {
         //break;
     }
     else{
+
       if(nuevo[0]==comida[0]&&nuevo[1]==comida[1]){
+          if(Panel.score==-1){
+           Panel.score=1;
+              System.out.println(score);
+              Panel.punto(score);
+          }
+          else if(Panel.score==1){
+            Panel.score=2;
+              System.out.println(score);
+              Panel.punto(score);
+          }
+           else if(Panel.score==2){
+            Panel.score=3;
+              System.out.println(score);
+              Panel.punto(score);
+          }
+            else if(Panel.score==3){
+            Panel.score=4;
+            Panel.punto(score);
+              System.out.println(score);
+          }
+                     else if(Panel.score==4){
+            Panel.score=5;
+              System.out.println(score);
+          }
+                     else if(Panel.score==5){
+            Panel.score=6;
+              System.out.println(score);
+          }
+                     else if(Panel.score==6){
+            Panel.score=7;
+              System.out.println(score);
+          }
+                     else if(Panel.score==7){
+            Panel.score=8;
+              System.out.println(score);
+          }
+//          switch (Panel.score) {
+//              case -1:
+//                  Panel.score++;
+//                  System.out.println(score);
+//                  Panel.punto(score);
+//                  break;
+//              case 0:
+//                  Panel.score++;
+//                  System.out.println(score);
+//                  Panel.punto(score);
+//                  // Panel.punto(score);
+//                  break;
+//              case 1:
+//                  Panel.score++;
+//                  System.out.println(score);
+//                  Panel.punto(score);
+//                  break;
+//              case 2:
+//                  Panel.score++;
+//                  System.out.println("Score snake"+score);
+//                  Panel.punto(score);
+//                  break;
+//              default:
+//                  break;
+//          }
+        //System.out.println(score);
           snake.add(nuevo);
                            // Panel.score++;
-           Panel.punto(score);
-                     //System.out.println("comida");
+           //Panel.punto(score);
+            
          generarcomida();
 
 //                   Panel.score++;
